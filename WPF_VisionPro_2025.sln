@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_VisionPro_2025", "WPF_VisionPro_2025\WPF_VisionPro_2025.csproj", "{C1DDC6CE-127B-4D40-9C42-0BE46D7540DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_MVVM_20250405", "WPF_MVVM_20250405\WPF_MVVM_20250405.csproj", "{CD13C277-4745-47C4-B824-F0A752353E0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C1DDC6CE-127B-4D40-9C42-0BE46D7540DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1DDC6CE-127B-4D40-9C42-0BE46D7540DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1DDC6CE-127B-4D40-9C42-0BE46D7540DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD13C277-4745-47C4-B824-F0A752353E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD13C277-4745-47C4-B824-F0A752353E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD13C277-4745-47C4-B824-F0A752353E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD13C277-4745-47C4-B824-F0A752353E0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

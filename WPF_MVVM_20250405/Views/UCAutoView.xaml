@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="WPF_MVVM_20250405.Views.UCAutoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_MVVM_20250405.Views"
+             xmlns:viewmodel="clr-namespace:WPF_MVVM_20250405.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="800">
+    <Grid Background="LightCyan">
+
+        <Label Content="{Binding strSystem, UpdateSourceTrigger=PropertyChanged}"/>
+        <UniformGrid Columns="2">
+            <Grid Background="Aqua" Margin="2">
+                <ContentPresenter Content="{Binding SubViewModel}">
+                    <ContentPresenter.Resources>
+                        <DataTemplate DataType="{x:Type viewmodel:SubViewModel}">
+                            <local:UCSubAuto/>
+                        </DataTemplate>
+                    </ContentPresenter.Resources>
+                </ContentPresenter>
+            </Grid>
+            <Grid Background="Gray" Margin="2">
+                <DataGrid ItemsSource="{Binding DataCollection}"
+                          AlternatingRowBackground="PaleGoldenrod"
+                          GridLinesVisibility="Horizontal"
+                          AutoGenerateColumns="False"
+                          >
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="STT">
+
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Stt}"
+                                               Foreground="{Binding Fg}"
+                                               FontWeight="Black"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Width="*"/>
+                        <DataGridTextColumn Header="Age" Binding="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </UniformGrid>
+
+    </Grid>
+</UserControl>

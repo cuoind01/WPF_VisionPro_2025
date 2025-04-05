@@ -1,0 +1,56 @@
+﻿<Window x:Class="WPF_MVVM_20250405.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_MVVM_20250405"
+      xmlns:view="clr-namespace:WPF_MVVM_20250405.Views"
+        xmlns:viewmodel="clr-namespace:WPF_MVVM_20250405.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="White"
+        AllowsTransparency="True"
+        >
+    <!--MVVM Model View ViewModel-->
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <ContentPresenter Content="{Binding TopViewModel}">
+                <ContentPresenter.Resources>
+                    <DataTemplate DataType="{x:Type viewmodel:TopBarViewModel}">
+                        <view:UCTopBarView/>
+                    </DataTemplate>
+                </ContentPresenter.Resources>
+            </ContentPresenter>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ContentPresenter Content="{Binding CurrentViewModel}">
+                <ContentPresenter.Resources>
+                    <DataTemplate DataType="{x:Type viewmodel:AutoViewModel}">
+                        <view:UCAutoView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type viewmodel:TeachingViewModel}">
+                        <view:UCTeachingView/>
+                    </DataTemplate>
+                </ContentPresenter.Resources>
+            </ContentPresenter>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <ContentPresenter Content="{Binding BottomViewModel}">
+                <ContentPresenter.Resources>
+                    <DataTemplate DataType="{x:Type viewmodel:BottomBarViewModel}">
+                        <view:UCBottomBarView/>
+                    </DataTemplate>
+                </ContentPresenter.Resources>
+            </ContentPresenter>
+        </Grid>
+    </Grid>
+</Window>
